@@ -140,6 +140,8 @@ namespace Flexinets.Failover
 
                 _log.Debug("Found " + nodesAlive + " partners alive");
 
+                // This basically means that an even number of nodes, can result in two nodes becoming active at the same time
+                // For the current requirements, this is normally better than not having any running
                 if (nodesAlive >= (Decimal)nodes / 2)
                 {
                     _log.Debug("Wiih, we can haz quorum with " + nodesAlive + " / " + nodes + " nodes alive");
@@ -184,7 +186,7 @@ namespace Flexinets.Failover
                 var endpoint = new EndpointAddress(partner + "/FailoverPoll");
                 using (var pipeFactory =
                     new ChannelFactory<IFailoverService>(
-                        new BasicHttpBinding {OpenTimeout = TimeSpan.FromMilliseconds(_pollTimeout)}, endpoint))
+                        new BasicHttpBinding { OpenTimeout = TimeSpan.FromMilliseconds(_pollTimeout) }, endpoint))
                 {
 
                     var client = pipeFactory.CreateChannel();
@@ -201,7 +203,7 @@ namespace Flexinets.Failover
                 _log.Debug("No response from " + partner + " - " + sex.Message);
             }
 
-            return new Partner {Alive = false};
+            return new Partner { Alive = false };
         }
 
 
@@ -221,16 +223,19 @@ namespace Flexinets.Failover
 
         public Partner GetStatus()
         {
+            // Figure out what hte best visible partner priority is
             var bestpartner = _partners.Where(o => o.Alive).OrderByDescending(o => o.Prioity).FirstOrDefault();
-            var response = new Partner
-            {
-                Alive = true,
-                Prioity = _priority,
-                PartnersVisible = _partners.Count(o => o.Alive),
-                BestPartnerVisible = bestpartner != null ? bestpartner.Uri : null,
-                Active = Active
-            };
-            return response;
+            var bestpriority = bestpartner != null ? bestpartner.Prioity : 0;
+            bestpriority = _priority > bestpriority ? _priority : bestpriority; // The best can also be the node itself...
+
+            return new Partner
+             {
+                 Alive = true,
+                 Prioity = _priority,
+                 PartnersVisible = _partners.Count(o => o.Alive),
+                 BestPartnerPriority = bestpriority,
+                 Active = Active
+             };
         }
     }
 }

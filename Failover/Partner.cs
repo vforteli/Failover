@@ -19,7 +19,7 @@ namespace Flexinets.Failover
         public Int32 PartnersVisible { get; set; }
 
         [DataMember]
-        public Uri BestPartnerVisible { get; set; }
+        public Int32 BestPartnerPriority { get; set; }
 
         [DataMember]
         public Boolean Active { get; set; }
