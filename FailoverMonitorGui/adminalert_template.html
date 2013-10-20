@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<style>
+body
+{
+	font-family: verdana;
+	font-size: 90%;
+}
+.default th
+{
+	padding: 2px 10px;
+	background-color: #000;
+	color: #fff;
+	text-align: left;
+}
+.default td
+{
+	padding: 2px 10px;
+}
+.ddefault tr:nth-child(odd) { background-color: #f3f3f3; }
+.dedfault tr:nth-child(even) { background-color: #ffffff; }
+.default
+{
+	border-collapse: collapse;
+}
+</style>
+<html>
+<body>
+You get this message because your company usage has reached the notification amount of %{alertinterval} MB<br/>
+<br/>
+<div style="margin: 10px; font-size: 90%; font-weight: bold;">Period: %{period}</div>
+<table class="default">
+	<thead>
+		<tr>
+			<th>Region</th>
+			<th style="text-align: right">Users</th>
+			<th style="text-align: right">Usage</th>
+			<th style="text-align: right">Sum</th>
+		</tr>
+	</thead>
+	%{regionrows}
+	<tfoot>
+		<tr>
+			<td>Total</td>
+			<td style="text-align: right"></td>
+			<td style="text-align: right">%{totalusage} MB</td>
+			<td style="text-align: right">%{totalsum} €</td>
+		</tr>
+	</tfoot>
+</table>
+<br/>
+<div style="margin: 10px; font-size: 90%; font-weight: bold;">Top 10 users</div>
+<table class="default">
+	<thead>
+		<tr>
+			<th>Username</th>
+			<th>Domain</th>
+			<th>Firstname</th>
+			<th>Lastname</th>
+			<th style="text-align: right">Usage</th>
+			<th style="text-align: right">Sum</th>
+		</tr>
+	</thead>
+	%{userrows}
+</table>
+<br/>
+<div style="margin: 10px; font-size: 90%; font-weight: bold;">Top 5 countries</div>
+<table class="default">
+	<thead>
+		<tr>
+			<th>Country</th>
+			<th style="text-align: right">Users</th>
+			<th style="text-align: right">Usage</th>
+			<th style="text-align: right">Sum</th>
+		</tr>
+	</thead>
+	%{countryrows}
+</table>
+<br/><br/>
+For more detailed statistics and user management, log in on https://portal.flexinets.se/
+</body>
+</html>

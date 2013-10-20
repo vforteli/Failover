@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Failover", "Failover\Failover.csproj", "{D61D30D4-DBBE-46C1-8D98-37B837C35703}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileDataMonitorApp", "FailoverMonitorGui\MobileDataMonitorApp.csproj", "{105D8700-AF5D-4570-B372-E8E20F1658FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Production|Any CPU = Production|Any CPU
+		Production|x86 = Production|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Production|Any CPU.Build.0 = Release|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Production|x86.ActiveCfg = Release|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D61D30D4-DBBE-46C1-8D98-37B837C35703}.Release|x86.ActiveCfg = Release|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Debug|x86.ActiveCfg = Debug|x86
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Debug|x86.Build.0 = Debug|x86
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Production|Any CPU.Build.0 = Production|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Production|x86.ActiveCfg = Production|x86
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Production|x86.Build.0 = Production|x86
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Release|Any CPU.ActiveCfg = Production|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Release|Any CPU.Build.0 = Production|Any CPU
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Release|x86.ActiveCfg = Production|x86
+		{105D8700-AF5D-4570-B372-E8E20F1658FC}.Release|x86.Build.0 = Production|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

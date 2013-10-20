@@ -1,0 +1,17 @@
+﻿<Window x:Class="Flexinets.MobileData.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="384" Width="979">
+    <Grid>
+        <Button Content="Start" Height="23" HorizontalAlignment="Left" Margin="12,6,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="Button_StartStop" />
+        <TextBox Margin="0,36,0,30" Name="textBox1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" />
+        <Button Content="Clear" Height="23" HorizontalAlignment="Left" Margin="93,6,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="Button_Clear" />
+        <CheckBox x:Name="AutoScroll" Content="Auto scroll" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top" IsChecked="True" Click="AutoScroll_Click"/>
+        <TextBox HorizontalAlignment="Left" Name="hostport" Height="23" Margin="733,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="72"/>
+        <TextBox HorizontalAlignment="Left" Name="PartnerIp" Height="23" Margin="810,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151"/>
+        <StatusBar Height="30" VerticalAlignment="Bottom">
+            <Label Content="" Name="StatusLabel" Width="122"/>
+        </StatusBar>
+        <TextBox Height="23" Margin="0,6,243,0" Name="Priority" TextWrapping="Wrap" Text="50" VerticalAlignment="Top" HorizontalAlignment="Right" Width="69"/>
+    </Grid>
+</Window>
